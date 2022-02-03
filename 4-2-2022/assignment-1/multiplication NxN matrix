@@ -1,0 +1,46 @@
+/*ACD RJY P B SUBRAHMANYAM*/
+#include <stdio.h>
+
+int main() {
+  int A[10][10], B[10][10], C[10][10];
+ int  m, p, q, n, i, j, k;
+
+  printf("Enter the rows and columns for 1st_Matrix: ");
+  scanf("%d %d", &m,&p);
+
+  printf("Enter the rows and columns for 2nd_Matrix: ");
+  scanf("%d %d", &q,&n);
+
+  for(i=0; i < m; i++) {
+    for(j=0; j < p; j++) {
+      printf("Enter the elements of 1st_matrix %d%d:", i, j);
+      scanf("%d", &A[i][j]);
+    }
+  }
+  for(j=0; j < q; j++) {
+    for(k=0; k < n; k++) {
+      printf("Enter the elements of 2nd_matrix %d%d: ", j, k);
+      scanf("%d", &B[j][k]);
+    }
+  }  
+  for(i=0; i < m; i++) {
+    for(j=0; j < n; j++) {
+      C[i][j] = 0;
+      for(k=0; k < p; k++) { 
+        C[i][j] += A[i][k]*B[k][j];
+      }
+    }
+  }
+  
+  printf("Answer by multiplication of 1st and 2nd matrix \n");
+
+  for(i = 0; i < m; i++) {
+    for(k = 0; k < n; k++) {
+      printf("%d ", C[i][k]);
+    }
+    
+    printf("\n");
+  }
+
+  return 0;
+}
